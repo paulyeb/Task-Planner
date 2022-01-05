@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <title>JavaScript Task Planner</title>
+</head>
+<body>
+    <header id="main-header" class="bg-success text-white p-4 mb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1 id="header-title">Daily Planner</h1>
+                </div>
+                <div class="col-sm-6 align-self-center">
+                    <input type="text" class="form-control" id="filter" placeholder="Search Tasks...">
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div id="main" class="card card-body">
+            <h2 class="title">Add Task</h2>
+            <form id="form" class=" mb-3">
+                <div class="row">
+                    <div class="col">
+                        <input type="text" id="task" class="form-control mr-2">
+                        <span id="noTaskName"></span>
+                    </div>
+                    <div class="col-2">
+                        <input type="time" id="time" class="form-control mr-2">
+                        <span id="noTaskTime"></span>
+                    </div>
+                    <div class="col-2">
+                        <input type="date" id="date" class="form-control mr-2">
+                        <span id="noTaskDate"></span>
+                    </div>
+                    <div class="col">
+                        <input type="submit" id="submit" value="submit" class="btn btn-dark">
+                    </div>
+                </div>
+            </form>
+            <h2 class="title">Tasks</h2>
+            <ul id="tasks" class="list-group">
+            </ul>
+        </div>
+    </div>
+ 
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>    
+<script src="planner.js"></script>    
+</body>
+</html> 
