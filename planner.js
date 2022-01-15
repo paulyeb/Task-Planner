@@ -3,6 +3,9 @@ const taskList = document.querySelector('#tasks');
 const noTaskName = document.querySelector('#noTaskName');
 const noTaskTime = document.querySelector('#noTaskTime');
 const noTaskDate = document.querySelector('#noTaskDate');
+const task = document.querySelector('#task');
+const time = document.querySelector('#time');
+const date = document.querySelector('#date');
 const filter = document.querySelector('#filter');
 
 form.addEventListener('submit', addTask);
@@ -16,81 +19,85 @@ function addTask(e) {
     const newTask = document.querySelector('#task').value;
 
     const newTaskTime = document.querySelector('#time').value;
-
+    
     const newTaskDate = document.querySelector('#date').value;
-
+    
+    task.value = null;
+    date.value = null;
+    time.value = null;
+    
     noTaskName.innerHTML = null;
     noTaskTime.innerHTML = null;
     noTaskDate.innerHTML = null;
-
+    
     if (newTask == '') {
-
+        
         noTaskName.className = 'text-danger h6 bold';
-
+        
         const noTaskNameText = document.createTextNode('ADD TASK');
-
+        
         noTaskName.appendChild(noTaskNameText);
-
+        
         setTimeout(() => noTaskNameText.remove(), 1000);
         
     } else if (newTaskTime == '') {
-
+        
         noTaskTime.className = 'text-danger h6 bold';
-
+        
         const noTaskTimeText = document.createTextNode('ADD TIME');
-
+        
         noTaskTime.appendChild(noTaskTimeText);
-
+        
         setTimeout(() => noTaskTimeText.remove(), 1000);
-
+        
     } else if (newTaskDate == '') {
-
+        
         noTaskDate.className = 'text-danger h6 bold';
-
+        
         const noTaskDateText = document.createTextNode('ADD DATE');
-
+        
         noTaskDate.appendChild(noTaskDateText);
 
         setTimeout(() => noTaskDateText.remove(), 1000);
-
+        
     } else {
-
+        
         let li = document.createElement('li');
-    
+        
         li.className = 'list-group-item h4';
-    
+        
         li.style.borderLeft = '6px solid green';
-    
+        
         li.appendChild(document.createTextNode(newTask));
-
+        
         const time = document.createElement('p');
-    
+        
         time.className = 'h6 pt-2';
-    
+        
         time.appendChild(document.createTextNode(newTaskTime));
-
+        
         li.appendChild(time);
         
         const date = document.createElement('p');
-    
+        
         date.className = 'h6';
-    
+        
         date.appendChild(document.createTextNode(newTaskDate));
-
+        
         li.appendChild(date);
-      
+        
         const deleteBtn = document.createElement('button');
         
         deleteBtn.className = ' btn btn-danger btn-sm float-end delete';
         
         deleteBtn.appendChild(document.createTextNode('X'));
-    
+        
         li.appendChild(deleteBtn);
-    
+        
         taskList.appendChild(li);
+
     }
-
-
+    
 }
 
 function removeTask(e) {
